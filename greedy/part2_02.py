@@ -31,6 +31,3 @@ while flag:
     flag = False
 
 print(result)
-
-
-
