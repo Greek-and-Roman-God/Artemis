@@ -1,3 +1,5 @@
+#시간초과로 실패
+
 n = int(input())
 n_list = list(map(int, input().split()))
 n_list.sort()
@@ -21,4 +23,3 @@ for i in m_list :
     if low > high :
       break
   print(cnt, end=' ')
-    
