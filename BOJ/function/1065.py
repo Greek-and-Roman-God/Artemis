@@ -4,7 +4,7 @@ def han_num(n) :
   cnt = 0
   if n < 100 : #1 ~ 99는 무조건 등차수열
     cnt = n
-    return n
+    return cnt
   else :
     cnt = 99
   for i in range(100, n+1) :
