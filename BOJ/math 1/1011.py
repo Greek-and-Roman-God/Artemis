@@ -1,6 +1,28 @@
-#다 써보면서 규칙 찾기
-#제곱수와 제곱수의 중앙에서 cnt 바뀜
+#제곱수와 제곱수의 중앙에서 cnt 바뀌는 규칙이 존재한다
+#1	1		1
+#2	1 1		2
+#3	1 1 1		3
+#4	1 2 1		3
+#5	1 2 1 1		4
+#6	1 2 2 1		4
+#7	1 2 2 1 1		5
+#8	1 2 2 2 1		5
+#9	1 2 3 2 1		5
+#10	1 2 3 2 1 1	6
+import math
 
+T = int(input())
+for _ in range(T) :
+  x, y = map(int, input().split())
+  sqrt_length = math.sqrt(y-x)
+  cnt = int(sqrt_length) * 2
+  if int(sqrt_length) == sqrt_length :
+    cnt -= 1
+  elif y-x >= (math.pow(int(sqrt_length),2) + math.pow(int(sqrt_length)+1,2))/2 :
+    cnt += 1
+  print(cnt)
+
+"""
 #시간초과
 
 #k-1 k k+1을 이동할 수 있을 때
@@ -26,3 +48,4 @@ for _ in range(T) :
     x = x + k
     cnt += 1
   print(cnt)
+"""
