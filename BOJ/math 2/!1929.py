@@ -1,5 +1,6 @@
 #시간초과
 #반복문 돌릴 때 이미 제거한 수 빼고 돌리는 방법 찾아야 함
+#[True] 리스트를 만들어서 체크
 
 import math
 M, N = map(int, input().split())
