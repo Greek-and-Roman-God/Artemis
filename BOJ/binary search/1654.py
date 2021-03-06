@@ -1,21 +1,21 @@
-from sys import stdin
+import sys
 
-k, n = map(int, stdin.readline().split())
-K = []
-for _ in range(k) :
-  K.append(int(stdin.readline()))
+K, N = map(int, input().split())
+lan = [int(sys.stdin.readline()) for _ in range(K)]
 
-start = 1
-end = max(K) #모든 랜선이 잘려야하는 것은 아니다
-max = 0
-while not start > end :
+left = 1 #0으로 나누는 일이 없도록 1로 설정
+right = max(lan)
+
+result = []
+while not right < left :
   cnt = 0
-  center = (start+end)//2
-  for i in range(len(K)) :
-    cnt += K[i]//center
-  if cnt < n :
-    end = center - 1
-  elif cnt >= n :
-    max = center
-    start = center + 1
-print(max)
+  mid = (left + right) // 2
+  cnt += sum(i//mid for i in lan)
+  
+  if cnt >= N :
+    result.append(mid)
+    left = mid + 1
+  else :
+    right = mid - 1
+
+print(max(result))
