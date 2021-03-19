@@ -1,3 +1,18 @@
+#210319
+N, M, K = map(int, input().split())
+arr = list(map(int, input().split()))
+arr.sort(reverse=True)
+
+result = arr[0] #제일 큰 수를 result에 저장
+for i in range(1, M) :
+  if i % K : #K번까지는 제일 큰 수를 더하고
+    result += arr[0]
+  else : #그 이후 한 번은 그 다음으로 큰 수를 더해준다
+    result += arr[1]
+
+print(result)
+
+#201111
 n, m, k = map(int, input().split())
 list = list(map(int, input().split()))
 
