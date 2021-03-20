@@ -1,3 +1,20 @@
+#210320
+now = input()
+row, col = now[1], now[0]
+
+#이동 가능한 방향
+move = [(-2, -1), (-2, 1), (2, -1), (2, 1), (-1, -2), (1, -2), (-1, 2), (1, 2)]
+
+cnt = 0
+for x, y in move :
+  #범위를 벗어나면 다음 방향으로 넘어간다
+  if int(row) + x < 1 or int(row) + x > 8 or ord(col) + y < ord("a") or ord(col) + y > ord("h") : continue
+  cnt += 1
+
+print(cnt)
+
+
+#201111
 now = input() #a1
 x = now[0] #a
 y = now[1] #1
