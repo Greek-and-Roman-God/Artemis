@@ -27,6 +27,7 @@ for _ in range(T) :
 
     while queue :
       dist, now = heapq.heappop(queue)
+      if distance[now] < dist : continue #저장되어 있는 경로가 더 짧으면 continue
       for i in graph[now] :
         cost, next = dist + i[1], i[0]
         if cost < distance[next] :
